@@ -1,0 +1,10 @@
+<p>
+  {{username}}
+  <button (click)='clicked()'>Click me !</button>
+</p>
+<div>
+  <form #myForm='ngForm' (ngSubmit)='submitted(myForm)'>
+    <input type="text" [ngClass]="{'error': !username }" name="userName" [(ngModel)]="username" required>
+    <button type="submit" [disabled]="!myForm.valid">Submit</button>
+  </form>
+</div>
